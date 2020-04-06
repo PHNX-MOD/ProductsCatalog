@@ -1,0 +1,44 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+      <div class="col-md-12">
+        <div class="card ">
+
+            <div class="container-fluid">
+				<div class="row">
+            			<div class="container p-3 my-3 bg-dark text-white">
+                            <h2>{{ product.name }}</h2>
+						</div>
+				</div>
+			</div>
+          <div class="card-body ">
+            <p>
+                <a href="{{ product.image.url }}">
+                    <img src="{{ product.image.url }}" height="100" width="100">
+                </a>
+            </p>
+            <p>{{ product.name }}</p>
+            <p>{{ product.description }}</p>
+            <p>{{ product.brand }}</p>
+            <p>{{ product.get_status_display }}</p>
+            <p>{{ product.category.name }}</p>
+          </div>
+            <div class="card-footer ">
+                <hr>
+                <span>
+                    <a  class="btn btn-secondary" href="{% url 'products_list' %}">
+                        Back
+                    </a>
+                </span>
+                <span class="pull-right">
+                    <a  class="btn btn-success" href="{% url 'product_update' product.pk %}">
+                        Update
+                    </a>
+                    <a  class="btn btn-danger" href="{% url 'product_delete' product.pk %}">
+                        Delete
+                    </a>
+                </span>
+            </div>
+        </div>
+      </div>
+{% endblock %}

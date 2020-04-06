@@ -1,0 +1,24 @@
+#logo {
+	position: relative;
+	left:70px;
+}
+
+.bg-silver { background-color: var(--silver) }
+
+body {
+  background: #fafafa;
+  background-color:#d6d6d6;
+  color: #333333;
+  margin-top: 2rem;
+}
+
+
+#orion {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 30px;
+}
+
+
+#left-bar {
+  text-align: center;
+}

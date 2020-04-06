@@ -1,0 +1,28 @@
+{% extends 'products/base.html' %}
+{% block content %}
+    <table class="table">
+        <tr>
+            <div class="container-fluid">
+				<div class="row">
+            			<div class="container p-3 my-3 bg-dark text-white">
+                            <h2>Category list</h2>
+						</div>
+				</div>
+			</div>
+        </tr>
+        {% for category in categories %}
+            <tr>
+                <td><h4>{{ category.pk }}</h4></td>
+                <td><h4><a href="{% url 'category_detail' category.pk %}">{{ category.name }}</a></h4></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="card-footer ">
+        <hr>
+        <div class="stats">
+            <a class="btn btn-primary pull-right" href="{% url 'product_create' %}">create category</a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'products/base.html' %}
+{% block content %}
+<div class="container-fluid">
+				<div class="row">
+            			<div class="container p-3 my-3 bg-dark text-white">
+                            <h2>Create a product category here</h2>
+						</div>
+
+
+				</div>
+			</div>
+<form action="" method="post"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create"/>
+</form>
+{% endblock %}

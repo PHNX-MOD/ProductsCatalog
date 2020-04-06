@@ -1,0 +1,23 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="container-fluid">
+				<div class="row">
+            			<div class="container p-3 my-3 bg-dark text-white">
+                            <h2>Add new roduct</h2>
+						</div>
+				</div>
+			</div>
+          <div class="card-body ">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-primary pull-right" type="submit" value="Create" />
+            </form>
+              <a class="btn btn-secondary" href="{% url 'products_list' %}">Discard</a>
+          </div>
+        </div>
+      </div>
+{% endblock %}

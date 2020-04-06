@@ -1,0 +1,48 @@
+{% extends 'products/base.html' %}
+{% block content %}
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="container-fluid">
+				<div class="row">
+            			<div class="container p-3 my-3 bg-dark text-white">
+                            <h2>Products list</h2>
+						</div>
+
+
+				</div>
+			</div>
+          <div class="card-body ">
+            <table class="table">
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+            </tr>
+            {% for product in products %}
+                <tr>
+                    <td>
+                        <a href="{{ product.image.url }}">
+                            <img src="{{ product.image.url }}" height="100" width="100">
+                        </a>
+                    </td>
+                    <td>
+                        <h6><a href="{% url 'product_detail' product.pk %}">
+                            {{ product.name }}
+                        </a></h6>
+                    </td>
+                    <td>{{ product.description }}</td>
+                    <td><h6>{{ product.category.name }}</h6></td>
+                </tr>
+            {% endfor %}
+            </table>
+          </div>
+            <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                    <a class="btn btn-primary pull-right" href="{% url 'product_create' %}">Add product</a>
+                </div>
+            </div>
+        </div>
+      </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+      <div class="col-md-12">
+        <div class="card ">
+           <div class="container-fluid">
+				<div class="row">
+            			<div class="container p-3 my-3 bg-dark text-white">
+                            <h2>Update {{form.instance.name}} details</h2>
+						</div>
+				</div>
+			</div>
+
+          <div class="card-body ">
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <div class="pull-right">
+                        <input class="btn btn-success" type="submit" value="Update"/>
+                    </div>
+                </form>
+              <a class="btn btn-secondary" href="{% url 'product_detail' form.instance.pk %}">Cancel</a>
+          </div>
+        </div>
+      </div>
+{% endblock %}

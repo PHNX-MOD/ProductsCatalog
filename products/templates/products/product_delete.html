@@ -1,0 +1,27 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="container-fluid">
+				<div class="row">
+            			<div class="container p-3 my-3 bg-dark text-white">
+                            <h2> Delete {{ product.name }}</h2>
+						</div>
+				</div>
+			</div>
+          <div class="card-body ">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <p>
+                        Are you sure to delete product {{ product.name }}?
+                    </p>
+                    <div class="pull-right">
+                        <input class="btn btn-danger" type="submit" value="Delete".>
+                    </div>
+                </form>
+              <a class="btn btn-secondary" href="{% url 'products_list' %}">Cancel</a>
+          </div>
+        </div>
+      </div>
+{% endblock %}
